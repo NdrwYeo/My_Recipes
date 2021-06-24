@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddNewRecipeActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/addRecipeHeader"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btnBackForAddRecipe"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/back_button_orange"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Part 1 of 3"
+            android:textColor="@color/orange"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addRecipeHeader">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+        <ImageButton
+            android:id="@+id/imgAddRecipe"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            android:src="@drawable/image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/txtAddNutritionFact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Nutrition Facts"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgAddRecipe" />
+
+        <TextView
+            android:id="@+id/txtAddTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginEnd="16dp"
+            android:text="Title"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/eTxtAddTitleInput"
+            app:layout_constraintEnd_toStartOf="@+id/eTxtAddTitleInput"
+            app:layout_constraintTop_toTopOf="@+id/eTxtAddTitleInput" />
+
+            <EditText
+                android:id="@+id/eTxtAddTitleInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:inputType="textMultiLine"
+                android:maxHeight="100dp"
+                android:minHeight="45dp"
+                android:hint="Meassure in cal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtAddNutritionFact" />
+
+        <EditText
+            android:id="@+id/eTxtAddCaloriesInput"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Meassure in g"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:inputType="numberDecimal"
+            app:layout_constraintStart_toStartOf="@+id/eTxtAddTitleInput"
+            app:layout_constraintTop_toBottomOf="@+id/eTxtAddTitleInput" />
+
+            <TextView
+                android:id="@+id/txtAddCalories"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginEnd="16dp"
+                android:text="Calories"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/eTxtAddCaloriesInput"
+                app:layout_constraintEnd_toStartOf="@+id/eTxtAddCaloriesInput"
+                app:layout_constraintTop_toTopOf="@+id/eTxtAddCaloriesInput" />
+
+        <EditText
+            android:id="@+id/eTxtAddTotalFatInput"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Meassure in g"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:inputType="numberDecimal"
+            app:layout_constraintStart_toStartOf="@+id/eTxtAddCaloriesInput"
+            app:layout_constraintTop_toBottomOf="@+id/eTxtAddCaloriesInput" />
+
+            <TextView
+                android:id="@+id/txtAddTotalFat"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginEnd="16dp"
+                android:text="Total Fat"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/eTxtAddTotalFatInput"
+                app:layout_constraintEnd_toStartOf="@+id/eTxtAddTotalFatInput"
+                app:layout_constraintTop_toTopOf="@+id/eTxtAddTotalFatInput" />
+
+        <EditText
+            android:id="@+id/eTxtAddSaturatedFatInput"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:inputType="numberDecimal"
+            android:hint="Meassure in g"
+            app:layout_constraintStart_toStartOf="@+id/eTxtAddTotalFatInput"
+            app:layout_constraintTop_toBottomOf="@+id/eTxtAddTotalFatInput" />
+
+            <TextView
+                android:id="@+id/txtAddSaturatedFat"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginEnd="16dp"
+                android:text="Saturated Fat"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/eTxtAddSaturatedFatInput"
+                app:layout_constraintEnd_toStartOf="@+id/eTxtAddSaturatedFatInput"
+                app:layout_constraintTop_toTopOf="@+id/eTxtAddSaturatedFatInput" />
+
+
+            <EditText
+            android:id="@+id/eTxtAddFibreInput"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:inputType="numberDecimal"
+                android:hint="Meassure in g"
+            app:layout_constraintStart_toStartOf="@+id/eTxtAddSaturatedFatInput"
+            app:layout_constraintTop_toBottomOf="@+id/eTxtAddSaturatedFatInput" />
+
+            <TextView
+                android:id="@+id/txtAddFibre"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginEnd="16dp"
+                android:text="Fibre"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/eTxtAddFibreInput"
+                app:layout_constraintEnd_toStartOf="@+id/eTxtAddFibreInput"
+                app:layout_constraintTop_toTopOf="@+id/eTxtAddFibreInput" />
+
+
+
+        <EditText
+            android:id="@+id/eTxtAddProteinInput"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:inputType="numberDecimal"
+            android:hint="Meassure in g"
+            app:layout_constraintStart_toStartOf="@+id/eTxtAddFibreInput"
+            app:layout_constraintTop_toBottomOf="@+id/eTxtAddFibreInput" />
+
+            <TextView
+                android:id="@+id/txtAddProtein"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginEnd="16dp"
+                android:text="Protein"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/eTxtAddProteinInput"
+                app:layout_constraintEnd_toStartOf="@+id/eTxtAddProteinInput"
+                app:layout_constraintTop_toTopOf="@+id/eTxtAddProteinInput" />
+
+        <EditText
+            android:id="@+id/eTxtAddCholesterolInput"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:inputType="numberDecimal"
+            android:hint="Meassure in mg"
+            app:layout_constraintStart_toStartOf="@+id/eTxtAddProteinInput"
+            app:layout_constraintTop_toBottomOf="@+id/eTxtAddProteinInput" />
+
+            <TextView
+                android:id="@+id/txtAddCholesterol"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginEnd="16dp"
+                android:text="Cholesterol"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/eTxtAddCholesterolInput"
+                app:layout_constraintEnd_toStartOf="@+id/eTxtAddCholesterolInput"
+                app:layout_constraintTop_toTopOf="@+id/eTxtAddCholesterolInput" />
+
+            <Spinner
+                android:id="@+id/nutritionFactAddSpinner"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:inputType="numberDecimal"
+                android:hint="Meassure in mg"
+                app:layout_constraintStart_toStartOf="@+id/eTxtAddCholesterolInput"
+                app:layout_constraintTop_toBottomOf="@+id/eTxtAddCholesterolInput" />
+
+            <TextView
+                android:id="@+id/txtAddCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginEnd="16dp"
+                android:text="Category"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/nutritionFactAddSpinner"
+                app:layout_constraintEnd_toStartOf="@+id/nutritionFactAddSpinner"
+                app:layout_constraintTop_toTopOf="@+id/nutritionFactAddSpinner" />
+
+
+            <Button
+                android:id="@+id/btnAddNext"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                android:backgroundTint="@color/orange"
+                android:text="NEXT"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nutritionFactAddSpinner" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

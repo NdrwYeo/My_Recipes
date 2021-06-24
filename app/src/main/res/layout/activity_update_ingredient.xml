@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".UpdateIngredientActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/updateIngredientHeader"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update Ingredient"
+            android:textColor="@color/orange"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/updateIngredientBody"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateIngredientHeader">
+
+        <TextView
+            android:id="@+id/txtUpdateTitleLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="70dp"
+            android:text="Recipe Title: "
+            android:textColor="#070707"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtUpdateIngredientName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Ingredient Name:"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/txtUpdateTitleLabel"
+            app:layout_constraintTop_toBottomOf="@+id/txtCurrentRecipeTitle" />
+
+        <TextView
+            android:id="@+id/txtUpdateIngredientQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Ingredient Quantity:"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/txtUpdateIngredientName"
+            app:layout_constraintTop_toBottomOf="@+id/txtUpdateIngredientName" />
+
+        <TextView
+            android:id="@+id/txtUpdateUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Unit: "
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/txtUpdateIngredientQuantity"
+            app:layout_constraintTop_toBottomOf="@+id/txtUpdateIngredientQuantity" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinnerUpdateIngredientUnit"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:background="@drawable/drop_down"
+            android:spinnerMode="dropdown"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@+id/txtUpdateUnit"
+            app:layout_constraintTop_toBottomOf="@+id/eTxtUpdateIngredientQuantity" />
+
+        <EditText
+            android:id="@+id/etxtUpdateIngredientName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toEndOf="@+id/txtUpdateIngredientName"
+            app:layout_constraintTop_toTopOf="@+id/txtUpdateIngredientName" />
+
+        <Button
+            android:id="@+id/btnUpdateIngredient"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/rounded_button_add_ing"
+            android:text="Update"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerUpdateIngredientUnit" />
+
+        <Button
+            android:id="@+id/btnAddOnUpdateIngredient"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_button_add_ing"
+            android:text="Add"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/btnUpdateIngredient"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btnUpdateIngredient" />
+
+        <Button
+            android:id="@+id/btnRemoveUpdateIngredient"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_button_add_ing"
+            android:textAllCaps="false"
+            android:text="Delete"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnUpdateIngredient"
+            app:layout_constraintTop_toTopOf="@+id/btnUpdateIngredient" />
+
+        <TextView
+            android:id="@+id/btnNextUpdateStep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Next"
+            android:textColor="@color/orange"
+            android:textSize="24sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+
+        <EditText
+            android:id="@+id/eTxtUpdateIngredientQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:ems="10"
+            android:hint="Quantity"
+            android:inputType="numberDecimal"
+            app:layout_constraintStart_toEndOf="@+id/txtUpdateIngredientQuantity"
+            app:layout_constraintTop_toTopOf="@+id/txtUpdateIngredientQuantity" />
+
+        <TextView
+            android:id="@+id/txtCurrentRecipeTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="TextView"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtUpdateTitleLabel"
+            app:layout_constraintTop_toTopOf="@+id/txtUpdateTitleLabel" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateIngredientBody">
+
+        <Button
+            android:id="@+id/btnRefreshIngredient"
+            android:layout_width="45dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="213dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="3dp"
+            android:background="@drawable/reload"
+            app:layout_constraintBottom_toTopOf="@+id/svIngredientList"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtIngredientLabel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtIngredientLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Ingredients:"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ScrollView
+            android:id="@+id/svIngredientList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txtIngredientLabel">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="0dp">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/ryrUpdateIngredientList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:listitem="@layout/wm_recycle_update_ing"></androidx.recyclerview.widget.RecyclerView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
