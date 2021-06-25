@@ -48,26 +48,27 @@ class AddIngredientActivity : AppCompatActivity() {
 
     private fun add(){
 
-        if(binding.eTxtIngredientNameInput.text.isEmpty())
-            Toast.makeText(this,"Please enter ingredient name", Toast.LENGTH_SHORT).show()
+        if(binding.eTxtIngredientNameInput.text.isEmpty()) {
+            Toast.makeText(this, "Please enter ingredient name", Toast.LENGTH_SHORT).show()
             binding.eTxtIngredientNameInput.requestFocus()
             return
-
-        if (binding.eTxtQuantityInput.text.isEmpty())
+        }
+        else if (binding.eTxtQuantityInput.text.isEmpty()){
             Toast.makeText(this,"Please enter quantity", Toast.LENGTH_SHORT).show()
             binding.eTxtQuantityInput.requestFocus()
             return
+        } else {
+            val ing = Ingredients()
+            ing.ingredientID = UUID.randomUUID().toString()
+            ing.ingredientName = binding.eTxtIngredientNameInput.text.toString()
+            ing.quantity = binding.eTxtQuantityInput.text.toString().toDouble()
+            ing.recipeID = rc_id
+            ing.unit = binding.spinnerUnit.selectedItem.toString()
 
-        val ing = Ingredients()
-        ing.ingredientID = UUID.randomUUID().toString()
-        ing.ingredientName = binding.eTxtIngredientNameInput.text.toString()
-        ing.quantity = binding.eTxtQuantityInput.text.toString().toDouble()
-        ing.recipeID = rc_id
-        ing.unit = binding.spinnerUnit.selectedItem.toString()
-
-        list.add(ing)
-        display()
-        cleartxt()
+            list.add(ing)
+            display()
+            clearText()
+        }
 
     }
 
@@ -103,10 +104,6 @@ class AddIngredientActivity : AppCompatActivity() {
 
     }
 
-    private fun cleartxt(){
-        binding.eTxtIngredientNameInput.setText("")
-        binding.eTxtQuantityInput.setText("")
-    }
 
     private fun insert(){
 
@@ -124,6 +121,11 @@ class AddIngredientActivity : AppCompatActivity() {
 
     companion object{
         val RECIPE_KEY = "RECIPE_KEY"
+    }
+
+    private fun clearText(){
+        binding.eTxtIngredientNameInput.setText("")
+        binding.eTxtQuantityInput.setText("")
     }
 
 

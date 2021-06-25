@@ -128,8 +128,7 @@ class UpdateStepActivity : AppCompatActivity() {
 
             ref.setValue(step)
             Toast.makeText(baseContext, "Added New Step Successful", Toast.LENGTH_SHORT).show()
-            binding.eTxtUpdateDescriptionInput.setText("")
-            binding.eTxtUpdateStepNoInput.setText("")
+            clearFocus()
         }
 
 
@@ -139,20 +138,19 @@ class UpdateStepActivity : AppCompatActivity() {
 
         if(binding.eTxtUpdateStepNoInput.text.toString().isEmpty()){
             Toast.makeText(this,"Please select step from the list to update", Toast.LENGTH_SHORT).show()
-            binding.eTxtUpdateStepNoInput.clearFocus()
+            clearFocus()
             return
         }
         else if(binding.eTxtUpdateDescriptionInput.text.toString().isEmpty()){
             Toast.makeText(this,"Please select step from the list to update", Toast.LENGTH_SHORT).show()
-            binding.eTxtUpdateDescriptionInput.clearFocus()
+            clearFocus()
             return
         } else{
             val ref = FirebaseDatabase.getInstance().getReference("Steps/$stepSelectedId")
             ref.child("stepNo").setValue(binding.eTxtUpdateStepNoInput.text.toString().toInt())
             ref.child("desc").setValue(binding.eTxtUpdateDescriptionInput.text.toString())
             Toast.makeText(baseContext, "Step Update Successful", Toast.LENGTH_SHORT).show()
-            binding.eTxtUpdateDescriptionInput.setText("")
-            binding.eTxtUpdateStepNoInput.setText("")
+            clearFocus()
 
         }
     }
@@ -160,12 +158,12 @@ class UpdateStepActivity : AppCompatActivity() {
     private fun removeStep(){
         if(binding.eTxtUpdateStepNoInput.text.toString().isEmpty()){
             Toast.makeText(this,"Please select step from the list to delete", Toast.LENGTH_SHORT).show()
-            binding.eTxtUpdateStepNoInput.clearFocus()
+            clearFocus()
             return
         }
         else if(binding.eTxtUpdateDescriptionInput.text.toString().isEmpty()){
             Toast.makeText(this,"Please select step from the list to delete", Toast.LENGTH_SHORT).show()
-            binding.eTxtUpdateDescriptionInput.clearFocus()
+            clearFocus()
             return
         } else {
             val builder = AlertDialog.Builder(this@UpdateStepActivity)
@@ -176,17 +174,23 @@ class UpdateStepActivity : AppCompatActivity() {
                 val ref = FirebaseDatabase.getInstance().getReference("/Steps").child(stepSelectedId)
                 ref.removeValue()
                 init()
-                binding.eTxtUpdateStepNoInput.setText("")
-                binding.eTxtUpdateDescriptionInput.setText("")
+                clearFocus()
             }
             builder.setNegativeButton("No") { dialog, which ->
-                binding.eTxtUpdateStepNoInput.setText("")
-                binding.eTxtUpdateDescriptionInput.setText("")
+                clearFocus()
             }
             val dialog: AlertDialog = builder.create()
             dialog.show()
         }
     }
+
+    private fun clearFocus(){
+        binding.eTxtUpdateDescriptionInput.clearFocus()
+        binding.eTxtUpdateStepNoInput.clearFocus()
+        binding.eTxtUpdateDescriptionInput.setText("")
+        binding.eTxtUpdateStepNoInput.setText("")
+    }
+
 
 
 }

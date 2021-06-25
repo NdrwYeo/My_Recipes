@@ -142,8 +142,7 @@ class UpdateIngredientActivity : AppCompatActivity() {
 
             ref.setValue(ingredient)
             Toast.makeText(baseContext, "Added New Ingredient Successful", Toast.LENGTH_SHORT).show()
-            binding.eTxtUpdateIngredientName.setText("")
-            binding.eTxtUpdateIngredientQuantity.setText("")
+            clearFocus()
         }
     }
 
@@ -151,12 +150,12 @@ class UpdateIngredientActivity : AppCompatActivity() {
 
         if(binding.eTxtUpdateIngredientName.text.toString().isEmpty()){
             Toast.makeText(this,"Please select ingredient from the list to update", Toast.LENGTH_SHORT).show()
-            binding.eTxtUpdateIngredientName.clearFocus()
+            clearFocus()
             return
         }
         else if(binding.eTxtUpdateIngredientQuantity.text.toString().isEmpty()){
             Toast.makeText(this,"Please select ingredient from the list to update", Toast.LENGTH_SHORT).show()
-            binding.eTxtUpdateIngredientQuantity.clearFocus()
+            clearFocus()
             return
         } else{
             val ref = FirebaseDatabase.getInstance().getReference("Ingredient/$ingSelectedId")
@@ -164,20 +163,19 @@ class UpdateIngredientActivity : AppCompatActivity() {
             ref.child("quantity").setValue(binding.eTxtUpdateIngredientQuantity.text.toString().toDouble())
             ref.child("unit").setValue(binding.spinnerUpdateIngredientUnit.selectedItem.toString())
             Toast.makeText(baseContext, "Ingredient Update Successful", Toast.LENGTH_SHORT).show()
-            binding.eTxtUpdateIngredientName.setText("")
-            binding.eTxtUpdateIngredientQuantity.setText("")
+            clearFocus()
         }
     }
 
     private fun removeIngredient(){
         if(binding.eTxtUpdateIngredientName.text.toString().isEmpty()){
             Toast.makeText(this,"Please select ingredient from the list to delete", Toast.LENGTH_SHORT).show()
-            binding.eTxtUpdateIngredientName.clearFocus()
+            clearFocus()
             return
         }
         else if(binding.eTxtUpdateIngredientQuantity.text.toString().isEmpty()){
             Toast.makeText(this,"Please select ingredient from the list to delete", Toast.LENGTH_SHORT).show()
-            binding.eTxtUpdateIngredientQuantity.clearFocus()
+            clearFocus()
             return
         } else {
             val builder = AlertDialog.Builder(this@UpdateIngredientActivity)
@@ -188,12 +186,10 @@ class UpdateIngredientActivity : AppCompatActivity() {
                 val ref = FirebaseDatabase.getInstance().getReference("/Ingredient").child(ingSelectedId)
                 ref.removeValue()
                 init()
-                binding.eTxtUpdateIngredientName.setText("")
-                binding.eTxtUpdateIngredientQuantity.setText("")
+                clearFocus()
             }
             builder.setNegativeButton("No") { dialog, which ->
-                binding.eTxtUpdateIngredientName.setText("")
-                binding.eTxtUpdateIngredientQuantity.setText("")
+                clearFocus()
             }
             val dialog: AlertDialog = builder.create()
             dialog.show()
@@ -206,6 +202,12 @@ class UpdateIngredientActivity : AppCompatActivity() {
         val UPDATED_RECIPE_TITLE = "UPDATED_RECIPE_TITLE"
     }
 
+    private fun clearFocus(){
+        binding.eTxtUpdateIngredientName.clearFocus()
+        binding.eTxtUpdateIngredientQuantity.clearFocus()
+        binding.eTxtUpdateIngredientName.setText("")
+        binding.eTxtUpdateIngredientQuantity.setText("")
+    }
 
 
 
