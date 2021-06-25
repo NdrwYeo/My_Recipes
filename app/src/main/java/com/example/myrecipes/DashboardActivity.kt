@@ -98,8 +98,8 @@ class DashboardActivity : AppCompatActivity() {
     }
 
     private fun spinnerinit(){
-        val cat = resources.getStringArray(R.array.text_array)
-        val adapter = ArrayAdapter(this, simple_spinner_dropdown_item, cat)
+        val category = resources.getStringArray(R.array.text_array)
+        val adapter = ArrayAdapter(this, simple_spinner_dropdown_item, category)
         binding.spinnerCategory.adapter = adapter
     }
 
@@ -125,6 +125,10 @@ class DashboardActivity : AppCompatActivity() {
             MainActivity.launchIntentClearTask(this)
             FirebaseAuth.getInstance().signOut()
         }
+    }
+
+    override fun onBackPressed() {
+        finishAffinity()
     }
 
 

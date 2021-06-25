@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import com.example.myrecipes.databinding.ActivityAddIngredientBinding
 import com.example.myrecipes.Ingredients
 import com.google.firebase.database.FirebaseDatabase
@@ -35,8 +36,12 @@ class AddIngredientActivity : AppCompatActivity() {
             fc.delete(rc_id)
             finish()
         }
-        binding.btnAddIngredient.setOnClickListener { add() }
-        binding.btnNextStep.setOnClickListener { insert() }
+        binding.btnAddIngredient.setOnClickListener {
+            add()
+        }
+        binding.btnNextStep.setOnClickListener {
+            insert()
+        }
 
 
     }
@@ -44,9 +49,13 @@ class AddIngredientActivity : AppCompatActivity() {
     private fun add(){
 
         if(binding.eTxtIngredientNameInput.text.isEmpty())
+            Toast.makeText(this,"Please enter ingredient name", Toast.LENGTH_SHORT).show()
+            binding.eTxtIngredientNameInput.requestFocus()
             return
 
         if (binding.eTxtQuantityInput.text.isEmpty())
+            Toast.makeText(this,"Please enter quantity", Toast.LENGTH_SHORT).show()
+            binding.eTxtQuantityInput.requestFocus()
             return
 
         val ing = Ingredients()

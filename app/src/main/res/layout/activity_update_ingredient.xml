@@ -16,6 +16,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/btnBackForUpdateIngredient"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/back_button_orange"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,12 +40,26 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/btnForwardForUpdateIngredient"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/arrow_forward"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/updateIngredientBody"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="32dp"
             android:text="Recipe Title: "
             android:textColor="#070707"
             android:textSize="18sp"
@@ -58,7 +86,7 @@
             android:textColor="#000000"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/txtUpdateTitleLabel"
-            app:layout_constraintTop_toBottomOf="@+id/txtCurrentRecipeTitle" />
+            app:layout_constraintTop_toBottomOf="@+id/txtUpdateTitleLabel" />
 
         <TextView
             android:id="@+id/txtUpdateIngredientQuantity"
@@ -82,48 +110,49 @@
             app:layout_constraintStart_toStartOf="@+id/txtUpdateIngredientQuantity"
             app:layout_constraintTop_toBottomOf="@+id/txtUpdateIngredientQuantity" />
 
-        <androidx.appcompat.widget.AppCompatSpinner
+        <Spinner
             android:id="@+id/spinnerUpdateIngredientUnit"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:background="@drawable/drop_down"
-            android:spinnerMode="dropdown"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:inputType="numberDecimal"
             app:layout_constraintStart_toEndOf="@+id/txtUpdateUnit"
-            app:layout_constraintTop_toBottomOf="@+id/eTxtUpdateIngredientQuantity" />
+            app:layout_constraintTop_toBottomOf="@+id/txtUpdateIngredientQuantity" />
 
         <EditText
-            android:id="@+id/etxtUpdateIngredientName"
+            android:id="@+id/eTxtUpdateIngredientName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
             android:ems="10"
             android:hint="Name"
             android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/txtUpdateIngredientName"
-            app:layout_constraintTop_toTopOf="@+id/txtUpdateIngredientName" />
+            app:layout_constraintTop_toBottomOf="@+id/txtCurrentRecipeTitle" />
 
         <Button
             android:id="@+id/btnUpdateIngredient"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:layout_marginTop="32dp"
-            android:background="@drawable/rounded_button_add_ing"
+            android:backgroundTint="@color/orange"
             android:text="Update"
             android:textAllCaps="false"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/spinnerUpdateIngredientUnit" />
+
 
         <Button
             android:id="@+id/btnAddOnUpdateIngredient"
             android:layout_width="120dp"
             android:layout_height="50dp"
-            android:background="@drawable/rounded_button_add_ing"
+            android:backgroundTint="@color/orange"
             android:text="Add"
             android:textAllCaps="false"
-            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/btnUpdateIngredient"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/btnUpdateIngredient" />
@@ -132,37 +161,26 @@
             android:id="@+id/btnRemoveUpdateIngredient"
             android:layout_width="120dp"
             android:layout_height="50dp"
-            android:background="@drawable/rounded_button_add_ing"
+            android:backgroundTint="@color/orange"
             android:textAllCaps="false"
             android:text="Delete"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btnUpdateIngredient"
             app:layout_constraintTop_toTopOf="@+id/btnUpdateIngredient" />
 
-        <TextView
-            android:id="@+id/btnNextUpdateStep"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:text="Next"
-            android:textColor="@color/orange"
-            android:textSize="24sp"
-            android:textStyle="italic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></TextView>
 
         <EditText
             android:id="@+id/eTxtUpdateIngredientQuantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
             android:ems="10"
             android:hint="Quantity"
             android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/txtUpdateIngredientQuantity"
-            app:layout_constraintTop_toTopOf="@+id/txtUpdateIngredientQuantity" />
+            app:layout_constraintTop_toBottomOf="@+id/eTxtUpdateIngredientName" />
 
         <TextView
             android:id="@+id/txtCurrentRecipeTitle"
@@ -186,19 +204,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/updateIngredientBody">
-
-        <Button
-            android:id="@+id/btnRefreshIngredient"
-            android:layout_width="45dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="213dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="3dp"
-            android:background="@drawable/reload"
-            app:layout_constraintBottom_toTopOf="@+id/svIngredientList"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/txtIngredientLabel"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txtIngredientLabel"
@@ -239,7 +244,7 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:listitem="@layout/wm_recycle_update_ing"></androidx.recyclerview.widget.RecyclerView>
+                    tools:listitem="@layout/recycle_update_ing"></androidx.recyclerview.widget.RecyclerView>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

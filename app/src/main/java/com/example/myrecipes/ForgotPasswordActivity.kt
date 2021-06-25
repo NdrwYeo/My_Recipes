@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
 import com.example.myrecipes.databinding.ActivityForgotPasswordBinding
+
 import com.google.firebase.auth.FirebaseAuth
 
 class ForgotPasswordActivity : AppCompatActivity() {

@@ -37,6 +37,10 @@ class RecipeDetailActivity : AppCompatActivity() {
         bindSteps()
     }
 
+    companion object{
+        val RECIPE_ID = "RECIPE_ID"
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,7 +53,7 @@ class RecipeDetailActivity : AppCompatActivity() {
 
         binding.btnUpdateRecipe.setOnClickListener{
             val intent = Intent(this, UpdateRecipeActivity::class.java)
-            intent.putExtra("RecipeId", rc_id)
+            intent.putExtra(RECIPE_ID, rc_id)
             startActivity(intent)
         }
 
@@ -64,11 +68,6 @@ class RecipeDetailActivity : AppCompatActivity() {
                 startActivity(intent)
             }
             builder.setNegativeButton("No"){ dialog, which ->
-                Toast.makeText(
-                    applicationContext,
-                    "Recipe will not be deleted",
-                    Toast.LENGTH_SHORT
-                ).show()
 
             }
             val dialog: AlertDialog = builder.create()

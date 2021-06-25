@@ -40,7 +40,6 @@ class AddNewRecipeActivity : AppCompatActivity() {
                 savePhoto()
             }
         }
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

@@ -24,7 +24,6 @@
             android:layout_marginBottom="16dp"
             android:src="@drawable/back_button_orange"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.01"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
@@ -36,31 +35,32 @@
             android:textColor="@color/orange"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/btnDeleteRecipe"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/orange_bin"
-            android:textColor="#F44336"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnUpdateRecipe"
+            app:layout_constraintStart_toEndOf="@+id/btnBackForRecipeDetail"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/btnUpdateRecipe"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/ic_baseline_update_24"
+            android:textColor="#F44336"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnDeleteRecipe"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnDeleteRecipe"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/red_bin"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/btnDeleteRecipe" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

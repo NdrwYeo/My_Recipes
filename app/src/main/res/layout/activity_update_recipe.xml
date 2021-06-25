@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".UpdateRecipeActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,12 +32,24 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Update Ingredient"
+            android:text="Update Recipe"
             android:textColor="@color/orange"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/btnForwardForUpdateRecipe"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/arrow_forward"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -53,11 +66,14 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="-79dp"
+            tools:layout_editor_absoluteY="-268dp">
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
+                android:layout_height="match_parent"
+                android:paddingBottom="70dp">
 
 
                 <ImageButton
@@ -92,6 +108,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="45dp"
                     android:layout_marginEnd="16dp"
+                    android:paddingTop="10sp"
                     android:text="Title"
                     android:textColor="@android:color/black"
                     android:textSize="20sp"
@@ -106,10 +123,10 @@
                     android:layout_marginStart="150dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
+                    android:hint="Measure in cal"
                     android:inputType="textMultiLine"
                     android:maxHeight="100dp"
                     android:minHeight="45dp"
-                    android:hint="Meassure in cal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtUpdateNutritionFact" />
@@ -120,9 +137,9 @@
                     android:layout_height="45dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
-                    android:hint="Meassure in g"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    android:hint="Measure in g"
                     android:inputType="numberDecimal"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/eTxtUpdateTitleInput"
                     app:layout_constraintTop_toBottomOf="@+id/eTxtUpdateTitleInput" />
 
@@ -131,6 +148,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="45dp"
                     android:layout_marginEnd="16dp"
+                    android:paddingTop="10sp"
                     android:text="Calories"
                     android:textColor="@android:color/black"
                     android:textSize="20sp"
@@ -144,9 +162,9 @@
                     android:layout_height="45dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
-                    android:hint="Meassure in g"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    android:hint="Measure in g"
                     android:inputType="numberDecimal"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/eTxtUpdateCaloriesInput"
                     app:layout_constraintTop_toBottomOf="@+id/eTxtUpdateCaloriesInput" />
 
@@ -155,6 +173,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="45dp"
                     android:layout_marginEnd="16dp"
+                    android:paddingTop="10sp"
                     android:text="Total Fat"
                     android:textColor="@android:color/black"
                     android:textSize="20sp"
@@ -168,9 +187,9 @@
                     android:layout_height="45dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    android:hint="Measure in g"
                     android:inputType="numberDecimal"
-                    android:hint="Meassure in g"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/eTxtUpdateTotalFatInput"
                     app:layout_constraintTop_toBottomOf="@+id/eTxtUpdateTotalFatInput" />
 
@@ -179,6 +198,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="45dp"
                     android:layout_marginEnd="16dp"
+                    android:paddingTop="10sp"
                     android:text="Saturated Fat"
                     android:textColor="@android:color/black"
                     android:textSize="20sp"
@@ -193,9 +213,10 @@
                     android:layout_height="45dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    android:hint="Measure in g"
                     android:inputType="numberDecimal"
-                    android:hint="Meassure in g"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="@+id/eTxtUpdateSaturatedFatInput"
                     app:layout_constraintTop_toBottomOf="@+id/eTxtUpdateSaturatedFatInput" />
 
@@ -204,6 +225,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="45dp"
                     android:layout_marginEnd="16dp"
+                    android:paddingTop="10sp"
                     android:text="Fibre"
                     android:textColor="@android:color/black"
                     android:textSize="20sp"
@@ -212,16 +234,15 @@
                     app:layout_constraintTop_toTopOf="@+id/eTxtUpdateFibreInput" />
 
 
-
                 <EditText
                     android:id="@+id/eTxtUpdateProteinInput"
                     android:layout_width="0dp"
                     android:layout_height="45dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    android:hint="Measure in g"
                     android:inputType="numberDecimal"
-                    android:hint="Meassure in g"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/eTxtUpdateFibreInput"
                     app:layout_constraintTop_toBottomOf="@+id/eTxtUpdateFibreInput" />
 
@@ -230,6 +251,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="45dp"
                     android:layout_marginEnd="16dp"
+                    android:paddingTop="10sp"
                     android:text="Protein"
                     android:textColor="@android:color/black"
                     android:textSize="20sp"
@@ -243,9 +265,9 @@
                     android:layout_height="45dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    android:hint="Measure in mg"
                     android:inputType="numberDecimal"
-                    android:hint="Meassure in mg"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/eTxtUpdateProteinInput"
                     app:layout_constraintTop_toBottomOf="@+id/eTxtUpdateProteinInput" />
 
@@ -254,6 +276,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="45dp"
                     android:layout_marginEnd="16dp"
+                    android:paddingTop="10sp"
                     android:text="Cholesterol"
                     android:textColor="@android:color/black"
                     android:textSize="20sp"
@@ -267,9 +290,8 @@
                     android:layout_height="45dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
-                    app:layout_constraintEnd_toEndOf="parent"
                     android:inputType="numberDecimal"
-                    android:hint="Meassure in mg"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/eTxtUpdateCholesterolInput"
                     app:layout_constraintTop_toBottomOf="@+id/eTxtUpdateCholesterolInput" />
 
@@ -279,6 +301,7 @@
                     android:layout_height="45dp"
                     android:layout_marginEnd="16dp"
                     android:text="Category"
+                    android:paddingTop="10sp"
                     android:textColor="@android:color/black"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="@+id/nutritionFactUpdateSpinner"
@@ -291,10 +314,9 @@
                     android:layout_width="200dp"
                     android:layout_height="45dp"
                     android:layout_marginTop="32dp"
-                    android:layout_marginBottom="32dp"
                     android:backgroundTint="@color/orange"
-                    android:text="NEXT"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="Update"
+                    android:textAllCaps="false"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/nutritionFactUpdateSpinner" />
@@ -302,5 +324,5 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

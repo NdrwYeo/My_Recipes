@@ -31,7 +31,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Part 2 of 3"
+            android:text="Add Ingredient"
             android:textColor="@color/orange"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -167,7 +167,8 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="24dp"
                 android:backgroundTint="@color/orange"
-                android:text="ADD"
+                android:text="Add"
+                android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/spinnerUnit" />
@@ -178,7 +179,8 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="16dp"
                 android:backgroundTint="@color/orange"
-                android:text="NEXT"
+                android:text="Next"
+                android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnAddIngredient" />

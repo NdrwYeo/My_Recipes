@@ -1,5 +1,6 @@
 package com.example.myrecipes
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.myrecipes.databinding.ActivityAddStepBinding
@@ -80,8 +81,8 @@ class AddStepActivity : AppCompatActivity() {
 
     private fun clear(){
         binding.eTxtDescriptionInput.setText("")
-        binding.eTxtStepInput.setText(counter.toString())
         counter += 1
+        binding.eTxtStepInput.setText(counter.toString())
     }
 
     private fun insert(){
@@ -90,6 +91,10 @@ class AddStepActivity : AppCompatActivity() {
             val ref = FirebaseDatabase.getInstance().getReference("/Steps/${it.stepID}")
             ref.setValue(it)
         }
+
+        val i = Intent(this, DashboardActivity::class.java)
+        finish()
+        startActivity(i)
     }
 
 }
