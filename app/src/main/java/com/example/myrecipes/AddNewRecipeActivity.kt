@@ -91,8 +91,8 @@ class AddNewRecipeActivity : AppCompatActivity() {
     }
 
     private fun spinnerinit(){
-        val cat = resources.getStringArray(R.array.pick_array)
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, cat)
+        val category = resources.getStringArray(R.array.pick_array)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, category)
         binding.nutritionFactAddSpinner.adapter = adapter
     }
 
